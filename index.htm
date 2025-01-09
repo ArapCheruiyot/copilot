@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Google Drive File Manager</title>
-    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -88,6 +86,8 @@
         </div>
     </div>
 
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
     <script>
         const CLIENT_ID = '958416089916-1embl17stmkectofeqb74c54ccs38rb5.apps.googleusercontent.com';
         const API_KEY = 'YOUR_API_KEY';
@@ -249,24 +249,4 @@
                 } else {
                     alert('No files found in the folder.');
                 }
-            } catch (err) {
-                console.error('Error listing files: ', err);
-            }
-        }
-
-        async function downloadFile(fileId, fileName) {
-            try {
-                const response = await gapi.client.drive.files.get({
-                    fileId: fileId,
-                    alt: 'media',
-                });
-                const blob = new Blob([response.body], { type: 'application/octet-stream' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = fileName;
-                a.click();
-                URL.revokeObjectURL(url);
-                alert(`File "${fileName}" downloaded successfully.`);
-            } catch (err) {
-                console.error('Error downloading file: ', err[_{{{CITATION{{{_1{](https://github.com/mikehibm/ec2panel/tree/d2e1b4eca64ef2bebdeb111bf5e2e13e4b76466c/utils%2Fgoogle-api.ts)[_{{{CITATION{{{_2{](https://github.com/neostudio-team/GridaBoard2/tree/0dd87e0bcb7cf3608b2a1ba1ec5325d3fe4ac9cd/src%2Fcomponents%2Fnavbar%2FUpload.js)
+           [_{{{CITATION{{{_1{](https://github.com/mikehibm/ec2panel/tree/d2e1b4eca64ef2bebdeb111bf5e2e13e4b76466c/utils%2Fgoogle-api.ts)[_{{{CITATION{{{_2{](https://github.com/neostudio-team/GridaBoard2/tree/0dd87e0bcb7cf3608b2a1ba1ec5325d3fe4ac9cd/src%2Fcomponents%2Fnavbar%2FUpload.js)
